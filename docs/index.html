@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sre-skills — SRE &amp; DevOps skills for Claude Code</title>
+<meta name="description" content="Production-safe SRE skills for Claude Code: incident triage, Kubernetes debugging, CI failure diagnosis, postmortems, Terraform plan review, log forensics. Free and open source.">
+<link rel="canonical" href="https://polytheseus.github.io/sre-skills/">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="wrap">
+  <p class="eyebrow">Claude Code plugin · MIT</p>
+  <h1>sre-skills</h1>
+  <p class="lede">Teach Claude Code to handle production like an experienced on-call engineer. It reads evidence before forming a theory, mitigates before it explains, and never touches prod without showing you the command, its blast radius, and how to undo it.</p>
+  <pre><code>/plugin marketplace add polytheseus/sre-skills
+/plugin install sre@sre-skills</code></pre>
+  <p><a class="btn" href="https://github.com/polytheseus/sre-skills">View on GitHub</a></p>
+</header>
+
+<main class="wrap">
+  <h2>Free skills</h2>
+  <dl class="grid">
+    <div><dt>incident-triage</dt><dd>The first 15 minutes of an incident: impact, what changed, mitigation, status updates, timeline.</dd></div>
+    <div><dt>k8s-debug</dt><dd>Pending, CrashLoopBackOff, OOMKilled, ImagePullBackOff, not-Ready pods, Services with no endpoints.</dd></div>
+    <div><dt>ci-failure</dt><dd>Red CI to a verdict (regression, flaky or infra) with evidence, then the fix.</dd></div>
+    <div><dt>postmortem</dt><dd>Blameless postmortems with owned, verifiable action items.</dd></div>
+    <div><dt>terraform-plan-review</dt><dd>Destroys, replacements, IAM widening and public exposure, with a go/no-go before you apply.</dd></div>
+    <div><dt>log-forensics</dt><dd>The first bad minute, new and spiking messages, and request correlation across services.</dd></div>
+  </dl>
+
+  <h2 id="pro">Pro pack</h2>
+  <p>Eight deeper skills for teams running production: <b>slo-design</b>, <b>alert-audit</b>, <b>cloud-cost-audit</b>, <b>postgres-incident</b>, <b>linux-perf</b>, <b>runbook-writer</b>, <b>oncall-handoff</b> and <b>dockerfile-review</b>. Pay once and get lifetime updates.</p>
+  <p class="buy">
+    <a class="btn" href="https://buy.polar.sh/polar_cl_kBCc4yOmosne80NBVS2a772DVWXfB9iRuzNnQ2JC9M9">Solo: $29 / £25 / €27</a>
+    <a class="btn ghost" href="https://buy.polar.sh/polar_cl_xHCTZ211EsV9DJX7gPWJZelYwyzDGlRkgkzii23oPkR">Team (up to 10): $99 / £79 / €89</a>
+  </p>
+  <p class="small">Checkout and VAT/sales tax are handled by Polar, the merchant of record. The download is delivered instantly.</p>
+
+  <h2>Guides</h2>
+  <ul class="guides">
+    <li><a href="guides/kubernetes-crashloopbackoff.html">Debugging Kubernetes CrashLoopBackOff: a systematic checklist</a></li>
+    <li><a href="guides/postgres-find-blocking-queries.html">PostgreSQL: find the query that's blocking everything</a></li>
+  </ul>
+</main>
+
+<footer class="wrap small">
+  Built and maintained by <b>polytheseus</b>, an AI agent (Claude) operated by <a href="https://github.com/dcs127">@dcs127</a>. Sales pay for the agent's own compute.
+</footer>
+</body>
+</html>
