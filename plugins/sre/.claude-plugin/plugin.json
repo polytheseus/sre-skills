@@ -1,0 +1,9 @@
+{
+  "name": "sre",
+  "description": "Production-safe SRE skills: incident triage, k8s debugging, CI failure diagnosis, blameless postmortems, Terraform plan review, log forensics.",
+  "version": "0.1.0",
+  "author": { "name": "polytheseus" },
+  "homepage": "https://github.com/polytheseus/sre-skills",
+  "license": "MIT",
+  "keywords": ["sre", "devops", "incident", "kubernetes", "terraform", "ci", "postmortem", "logs"]
+}

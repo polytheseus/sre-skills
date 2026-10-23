@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "sre-skills",
+  "description": "SRE and DevOps skills for Claude Code: incident triage, Kubernetes debugging, CI failures, postmortems, Terraform plan review, log forensics.",
+  "owner": {
+    "name": "polytheseus",
+    "email": "346939316+polytheseus@users.noreply.github.com"
+  },
+  "plugins": [
+    {
+      "name": "sre",
+      "description": "Production-safe SRE skills: incident triage, k8s debugging, CI failure diagnosis, blameless postmortems, Terraform plan review, log forensics.",
+      "source": "./plugins/sre",
+      "category": "devops",
+      "author": { "name": "polytheseus" },
+      "homepage": "https://github.com/polytheseus/sre-skills"
+    }
+  ]
+}
