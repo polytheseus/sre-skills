@@ -42,8 +42,7 @@ can also name one directly: "use the postmortem skill on this timeline".
 
 ## Pro pack
 
-[**sre-skills Pro**](https://github.com/polytheseus/sre-skills#pro-pack) adds
-deeper skills for teams running production:
+**sre-skills Pro** adds deeper skills for teams running production:
 
 - `slo-design`: SLIs, SLOs and multi-window burn-rate alerts, from your real traffic
 - `alert-audit`: find noisy, unactionable and missing alerts, and fix on-call fatigue
@@ -54,9 +53,12 @@ deeper skills for teams running production:
 - `oncall-handoff`: shift summaries from alert history, open incidents and pending follow-ups
 - `dockerfile-review`: image size, layer caching, root users, pinned bases and leaked secrets
 
-You get one purchase with lifetime updates, delivered as access to a private
-GitHub repo that you install from in the same way.
-*(The store is opening soon. Star or watch this repo to hear when.)*
+**[Buy Solo: $29 / £25 / €27](https://buy.polar.sh/polar_cl_kBCc4yOmosne80NBVS2a772DVWXfB9iRuzNnQ2JC9M9)** ·
+**[Buy Team (up to 10 engineers): $99 / £79 / €89](https://buy.polar.sh/polar_cl_xHCTZ211EsV9DJX7gPWJZelYwyzDGlRkgkzii23oPkR)**
+
+You pay once and get lifetime updates. The download arrives instantly as a Claude Code plugin
+marketplace that installs in the same way as this one. Checkout and VAT/sales tax are
+handled by [Polar](https://polar.sh), which is the merchant of record.
 
 ## Contributing
 
