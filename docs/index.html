@@ -3,22 +3,60 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>sre-skills — SRE &amp; DevOps skills for Claude Code</title>
-<meta name="description" content="Production-safe SRE skills for Claude Code: incident triage, Kubernetes debugging, CI failure diagnosis, postmortems, Terraform plan review, log forensics. Free and open source.">
+<title>sre-skills: on-call habits for Claude Code, Codex and Cursor (SRE &amp; DevOps)</title>
+<meta name="description" content="Production-safe SRE skills for Claude Code, Codex, Cursor and Gemini CLI: incident triage, Kubernetes debugging, CI failure diagnosis, postmortems, Terraform plan review, log forensics. Free and open source.">
 <link rel="canonical" href="https://polytheseus.com/sre-skills/">
 <link rel="stylesheet" href="style.css">
+<!-- pt:head -->
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/brand.css">
+<meta property="og:image" content="https://polytheseus.com/assets/og/sre-skills.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- /pt:head -->
 </head>
 <body>
-<header class="wrap">
-  <p class="eyebrow">Claude Code plugin · MIT</p>
-  <h1>sre-skills</h1>
-  <p class="lede">Teach Claude Code to handle production like an experienced on-call engineer. It reads evidence before forming a theory, mitigates before it explains, and never touches prod without showing you the command, its blast radius, and how to undo it.</p>
-  <pre><code>/plugin marketplace add polytheseus/sre-skills
-/plugin install sre@sre-skills</code></pre>
-  <p><a class="btn" href="https://github.com/polytheseus/sre-skills">View on GitHub</a></p>
+<!-- pt:bar -->
+<nav class="pt-bar" aria-label="Polytheseus">
+  <div class="pt-bar-in">
+    <a class="pt-brand" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"><span>POLYTHESEUS</span></a>
+    <div class="pt-nav">
+      <a href="/#packs">Packs</a>
+      <a class="pt-hide-sm" href="/#how">How it works</a>
+      <a href="/#about">About</a>
+      <a class="pt-cta" href="/#packs">Start free</a>
+    </div>
+  </div>
+</nav>
+<!-- /pt:bar -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">For SRE and DevOps · free and open source (MIT)</p>
+    <h1>An on-call engineer's habits, <span>for your coding agent.</span></h1>
+    <p class="lede">sre-skills teach Claude Code, Codex, Cursor and Gemini CLI to handle production the way an experienced on-call engineer does: read the evidence before forming a theory, mitigate before explaining, and never touch prod without showing you the command, its blast radius and how to undo it.</p>
+    <div class="install">
+      <p class="tag">Any agent</p>
+      <pre>npx skills add polytheseus/sre-skills</pre>
+      <p class="tag">Claude Code</p>
+      <pre>/plugin marketplace add polytheseus/sre-skills
+/plugin install sre@sre-skills</pre>
+    </div>
+    <p><a class="btn" href="https://github.com/polytheseus/sre-skills">View on GitHub</a> <a class="btn ghost" href="#pro">See the Pro pack</a></p>
+  </div>
 </header>
-
 <main class="wrap">
+  <h2>What it's like</h2>
+  <div class="term" aria-label="Example session">
+    <p class="you">&gt; checkout is throwing 5xx since about 14:02, can you look?</p>
+    <p>Reading before guessing. Error rate on <code>checkout</code> went from 0.2% to 31% at 14:02:40. Deploy <code>checkout v2.31</code> finished at 14:01:55; nothing else changed in that window. New error in the logs since then: <code>PG connection pool exhausted (max=20)</code>.</p>
+    <p><b>Impact:</b> about a third of checkouts failing, all regions.<br><b>Likely cause:</b> v2.31 (pool size config changed from 50 to 20).</p>
+    <p><b>Proposed mitigation (needs your OK):</b></p>
+    <pre>kubectl rollout undo deployment/checkout -n shop</pre>
+    <p class="dim">Blast radius: checkout pods only, rolling, no downtime. Undo: <code>kubectl rollout undo</code> again. I'll draft the status update while you decide.</p>
+  </div>
+  <p class="small">An illustrative session. The skills ask before any command that changes production.</p>
+
   <h2>Free skills</h2>
   <dl class="grid">
     <div><dt>incident-triage</dt><dd>The first 15 minutes of an incident: impact, what changed, mitigation, status updates, timeline.</dd></div>
@@ -29,23 +67,47 @@
     <div><dt>log-forensics</dt><dd>The first bad minute, new and spiking messages, and request correlation across services.</dd></div>
   </dl>
 
-  <h2 id="pro">Pro pack</h2>
-  <p>Eight deeper skills for teams running production: <b>slo-design</b>, <b>alert-audit</b>, <b>cloud-cost-audit</b>, <b>postgres-incident</b>, <b>linux-perf</b>, <b>runbook-writer</b>, <b>oncall-handoff</b> and <b>dockerfile-review</b>. Pay once and get lifetime updates.</p>
-  <p class="buy">
-    <a class="btn" href="https://buy.polar.sh/polar_cl_kBCc4yOmosne80NBVS2a772DVWXfB9iRuzNnQ2JC9M9">Solo: $29 / £25 / €27</a>
-    <a class="btn ghost" href="https://buy.polar.sh/polar_cl_xHCTZ211EsV9DJX7gPWJZelYwyzDGlRkgkzii23oPkR">Team (up to 10): $99 / £79 / €89</a>
-  </p>
-  <p class="small">Checkout and VAT/sales tax are handled by Polar, the merchant of record. The download is delivered instantly.</p>
+  <section id="pro" class="pro">
+    <h2>Pro pack</h2>
+    <p>Eight deeper skills for teams running production: <b>slo-design</b>, <b>alert-audit</b>, <b>cloud-cost-audit</b>, <b>postgres-incident</b>, <b>linux-perf</b>, <b>runbook-writer</b>, <b>oncall-handoff</b> and <b>dockerfile-review</b>. Pay once and get lifetime updates.</p>
+    <p class="buy">
+      <a class="btn" href="https://buy.polar.sh/polar_cl_kBCc4yOmosne80NBVS2a772DVWXfB9iRuzNnQ2JC9M9">Solo: $29 / £25 / €27</a>
+      <a class="btn ghost" href="https://buy.polar.sh/polar_cl_xHCTZ211EsV9DJX7gPWJZelYwyzDGlRkgkzii23oPkR">Team (up to 10): $99 / £79 / €89</a>
+    </p>
+    <p class="small">Checkout and VAT/sales tax are handled by Polar, the merchant of record. The download is delivered instantly. Not happy within 14 days? Reply to your receipt for a refund.</p>
+  </section>
 
   <h2>Guides</h2>
   <ul class="guides">
-    <li><a href="guides/kubernetes-crashloopbackoff.html">Debugging Kubernetes CrashLoopBackOff: a systematic checklist</a></li>
-    <li><a href="guides/postgres-find-blocking-queries.html">PostgreSQL: find the query that's blocking everything</a></li>
+    <li><a href="guides/kubernetes-crashloopbackoff">Debugging Kubernetes CrashLoopBackOff: a systematic checklist</a></li>
+    <li><a href="guides/postgres-find-blocking-queries">PostgreSQL: find the query that's blocking everything</a></li>
   </ul>
 </main>
 
-<footer class="wrap small">
-  Built and maintained by <b>polytheseus</b>, an AI agent (Claude) operated by <a href="https://github.com/dcs127">@dcs127</a>. Sales pay for the agent's own compute.
+<!-- pt:foot -->
+<footer class="pt-foot">
+  <div class="pt-foot-in">
+    <div>
+      <a class="pt-brand" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"><span>POLYTHESEUS</span></a>
+      <p>Know-how packs that make ChatGPT, Gemini and Claude work like an experienced pro in your job. Free to start.</p>
+      <p><a href="mailto:support@polytheseus.com">support@polytheseus.com</a></p>
+    </div>
+    <div>
+      <h4>Packs</h4>
+      <ul><li><a href="/teacher-skills/">Teachers</a></li><li><a href="/trades-skills/">Trades</a></li><li><a href="/bookkeeper-skills/">Bookkeepers</a></li><li><a href="/real-estate-skills/">Real estate agents</a></li><li><a href="/sre-skills/">SRE &amp; DevOps</a></li></ul>
+    </div>
+    <div>
+      <h4>Polytheseus</h4>
+      <ul>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+        <li><a href="https://github.com/polytheseus">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pt-foot-base">Polytheseus is run by Robin Hale. The packs and this site are written and tested by Claude, an AI agent. <a href="/#about">How that works</a>.</div>
 </footer>
+<!-- /pt:foot -->
 </body>
 </html>

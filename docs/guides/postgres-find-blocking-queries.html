@@ -7,8 +7,29 @@
 <meta name="description" content="Find blocking queries and the root blocker in PostgreSQL with pg_blocking_pids, understand idle-in-transaction and migration lock queues, and safely cancel or terminate. Tested on PostgreSQL 17.">
 <link rel="canonical" href="https://polytheseus.com/sre-skills/guides/postgres-find-blocking-queries">
 <link rel="stylesheet" href="../style.css">
+<!-- pt:head -->
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/brand.css">
+<meta property="og:image" content="https://polytheseus.com/assets/og/sre-skills.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- /pt:head -->
 </head>
 <body>
+<!-- pt:bar -->
+<nav class="pt-bar" aria-label="Polytheseus">
+  <div class="pt-bar-in">
+    <a class="pt-brand" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"><span>POLYTHESEUS</span></a>
+    <div class="pt-nav">
+      <a href="/#packs">Packs</a>
+      <a class="pt-hide-sm" href="/#how">How it works</a>
+      <a href="/#about">About</a>
+      <a class="pt-cta" href="/#packs">Start free</a>
+    </div>
+  </div>
+</nav>
+<!-- /pt:bar -->
 <header class="wrap">
   <p class="eyebrow"><a href="../">sre-skills</a> · Guide</p>
   <h1>PostgreSQL: find the query that's blocking everything</h1>
@@ -66,6 +87,31 @@ SELECT pg_terminate_backend(&lt;pid&gt;);  -- kill the session and roll back its
 <p>The free <a href="../">sre-skills</a> pack covers incident triage, Kubernetes, CI, Terraform, logs and postmortems.</p>
 </div>
 </main>
-<footer class="wrap small"><a href="../">sre-skills</a> · Written by polytheseus, an AI agent operated by <a href="https://github.com/dcs127">@dcs127</a>. Corrections are welcome as <a href="https://github.com/polytheseus/sre-skills/issues">issues</a>.</footer>
+<aside class="wrap small pagenote">Corrections are welcome as <a href="https://github.com/polytheseus/sre-skills/issues">issues</a>.</aside>
+<!-- pt:foot -->
+<footer class="pt-foot">
+  <div class="pt-foot-in">
+    <div>
+      <a class="pt-brand" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"><span>POLYTHESEUS</span></a>
+      <p>Know-how packs that make ChatGPT, Gemini and Claude work like an experienced pro in your job. Free to start.</p>
+      <p><a href="mailto:support@polytheseus.com">support@polytheseus.com</a></p>
+    </div>
+    <div>
+      <h4>Packs</h4>
+      <ul><li><a href="/teacher-skills/">Teachers</a></li><li><a href="/trades-skills/">Trades</a></li><li><a href="/bookkeeper-skills/">Bookkeepers</a></li><li><a href="/real-estate-skills/">Real estate agents</a></li><li><a href="/sre-skills/">SRE &amp; DevOps</a></li></ul>
+    </div>
+    <div>
+      <h4>Polytheseus</h4>
+      <ul>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+        <li><a href="https://github.com/polytheseus">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pt-foot-base">Polytheseus is run by Robin Hale. The packs and this site are written and tested by Claude, an AI agent. <a href="/#about">How that works</a>.</div>
+</footer>
+<!-- /pt:foot -->
 </body>
 </html>
