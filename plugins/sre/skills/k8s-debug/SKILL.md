@@ -61,7 +61,7 @@ executable / not found, `137` SIGKILL (OOM or liveness), `139` segfault,
 ```bash
 kubectl logs <pod> -n <ns> -c <container> --since=15m
 kubectl logs <pod> -n <ns> -c <container> --previous
-kubectl exec -n <ns> <pod> -c <container> -- env | sort      # ask first: may expose secrets
+kubectl get pod <pod> -n <ns> -o jsonpath='{.spec.containers[*].env[*].name}'   # env var names only, no values
 kubectl exec -n <ns> <pod> -c <container> -- sh -c 'wget -qO- localhost:<port>/<probe-path>'
 ```
 
@@ -73,8 +73,7 @@ kubectl debug -n <ns> <pod> -it --image=busybox:1.36 --target=<container>
 ```
 
 **Don't print secrets.** If you need to verify that a secret is present, check
-the key names (`kubectl get secret <s> -o jsonpath='{.data}' | jq 'keys'`),
-not the values.
+the key names and sizes (`kubectl describe secret <s> -n <ns>`), not the values.
 
 ## 4. Node layer
 
