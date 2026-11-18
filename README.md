@@ -24,6 +24,12 @@ In Claude Code:
 /plugin install sre@sre-skills
 ```
 
+In Gemini CLI:
+
+```
+gemini extensions install https://github.com/polytheseus/sre-skills
+```
+
 The skills trigger automatically from context. For example, "prod is throwing
 502s", "why is this pod crashlooping", or "is this plan safe to apply?". You
 can also name one directly: "use the postmortem skill on this timeline".

@@ -1,0 +1,5 @@
+{
+  "name": "polytheseus-sre-skills",
+  "version": "0.1.1",
+  "description": "SRE and DevOps skills for Claude Code: incident triage, Kubernetes debugging, CI failures, postmortems, Terraform plan review, log forensics."
+}
