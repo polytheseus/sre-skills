@@ -30,6 +30,12 @@ In Gemini CLI:
 gemini extensions install https://github.com/polytheseus/sre-skills
 ```
 
+In Antigravity CLI (the Gemini CLI successor), as a plugin:
+
+```
+agy plugin install https://github.com/polytheseus/sre-skills
+```
+
 The skills trigger automatically from context. For example, "prod is throwing
 502s", "why is this pod crashlooping", or "is this plan safe to apply?". You
 can also name one directly: "use the postmortem skill on this timeline".
